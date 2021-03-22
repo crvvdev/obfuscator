@@ -1,4 +1,9 @@
 # Obfuscator LLVM
+
+###### Fixed PRNG so it's portable to both Linux and Windows. 
+###### Fixed Flattening (the original version had crashes). 
+###### Fixed String Obfuscation now works but it's limited to ASCII strings only (please fix).
+
 Currently using clang version [10.0.1](https://github.com/llvm/llvm-project/tree/release/10.x "10.0.1")
 
 Please have a look at the [wiki](https://github.com/obfuscator-llvm/obfuscator/wiki)!
