@@ -87,7 +87,6 @@ public:
           encVar *cur = new encVar();
           cur->var = dynGV;
           cur->key = llvm::cryptoutils->get_uint8_t();
-          cur->is_unicode = is_unicode;
           
           // casting away const is undef. behavior in C++
           // TODO a clean implementation would retrieve the data, generate a new
