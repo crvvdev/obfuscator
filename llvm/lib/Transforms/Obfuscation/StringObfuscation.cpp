@@ -74,7 +74,7 @@ public:
         // dynGV->copyAttributesFrom(gv);
         dynGV->setInitializer(gv->getInitializer());
 
-        errs() << "GV: " << *gv << "\n";
+       // errs() << "GV: " << *gv << "\n";
 
         Constant *initializer = gv->getInitializer();
         ConstantDataSequential *cdata =
