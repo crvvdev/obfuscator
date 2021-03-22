@@ -1,6 +1,9 @@
+# Obfuscator LLVM
+Currently using clang version [10.0.1](https://github.com/llvm/llvm-project/tree/release/10.x "10.0.1")
+
 Please have a look at the [wiki](https://github.com/obfuscator-llvm/obfuscator/wiki)!
 
-Current version: [LLVM-4.0](https://github.com/obfuscator-llvm/obfuscator/tree/llvm-4.0)
+Obfuscator current version: [LLVM-4.0](https://github.com/obfuscator-llvm/obfuscator/tree/llvm-4.0)
 
 You can cite Obfuscator-LLVM using the following Bibtex entry:
 
@@ -16,3 +19,17 @@ You can cite Obfuscator-LLVM using the following Bibtex entry:
   doi={10.1109/SPRO.2015.10},
 }
 ```
+
+# Build Windows
+Personally i use Ninja because it's way faster than Visual Studio and it's better than dealing with GCC on Windows, all you gotta do is use VS Command Prompt x64 and run the following commands:
+
+```
+git clone https://github.com/crvvdev/obfuscator.git
+cd obfuscator
+mkdir build
+cd build
+cmake ../llvm -G Ninja -DLLVM_ENABLE_PROJECTS="clang;libcxx" -DCMAKE_BUILD_TYPE=Release -DLLVM_TARGETS_TO_BUILD=X86 -DLLVM_INCLUDE_EXAMPLES=OFF -DLLVM_BUILD_TESTS=OFF -DLLVM_INCLUDE_TESTS=OFF -DCMAKE_CXX_FLAGS=/std:c++14 -DBUILD_SHARED_LIBS=OFF -DLLVM_PARALLEL_COMPILE_JOBS=4 -DLLVM_PARALLEL_LINK_JOBS=4
+ninja
+```
+
+You can modify the flags to fit what you want.
